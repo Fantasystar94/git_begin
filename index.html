@@ -1,0 +1,128 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+    </style>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.18.12/babel.min.js"></script>
+<script type="text/babel">
+    const spanHtml = React.createElement('h3',{id:'first_span',class:'first_span_class on',onMouseEnter:()=>console.log(123)},`hi?`);
+//    const App =()=>{
+//     const [counter, setCounter] = React.useState(0);
+//     const onClick = ()=>{
+//        setCounter(current=>current+1);
+
+//     }
+//     return (<div className='on' id='div1'>
+//             <h3>total clickls : {counter} </h3>
+//             <button onClick={onClick}>click me</button>
+//         </div>); 
+//    }
+
+//     ReactDOM.render(<App/>,root);
+
+// function MinutesToHours(){
+//         const [amount,setAmount] = React.useState(0);
+//         const onChange =(e)=>{
+//             setAmount(e.target.value)
+//         };
+//         const [flipped,setFlipped]= React.useState(false);
+//         const reset =(e)=>{
+//             setAmount(0);
+//         };
+//         const onFlip = ()=>{
+//                 setFlipped((current) =>!current)
+//                 reset();
+//         }
+//         return(
+//             <div>
+//                 <div>
+//                     <label htmlFor='minutes'>minutes</label>
+//                     <input value={flipped ? amount*60 : amount}placeholder="minutes" type='number' id='minutes' onChange={onChange} disabled={flipped === true}/>
+//                     <label htmlFor='hours'>hours</label>
+//                     <input placeholder='hours' type='number' id='hours' value={ flipped ? amount : Math.round(amount/60)} disabled={flipped === false}  onChange={onChange}/>
+//                  </div>
+//                 <h4>you want to convert {amount}</h4>
+//                 <button onClick={reset}>reset</button>
+//                 <button onClick={onFlip}>flip</button>
+//             </div>
+//         )
+//     }
+    // function PoundsToKg(){
+        
+    //     const [kilo,setKilo] = React.useState(0);
+    //     const [bool,setFlipped] = React.useState(true);
+    //     console.log(bool);
+    //     const changingKilo =(e)=>{
+    //         setKilo(e.target.value)
+    //     };
+    //     const reset =()=>{
+    //         setKilo(0);
+    //     }
+    //     const flip = ()=>{
+    //         setFlipped(bool=>!bool);
+    //         reset();
+    //     }
+    //     return (
+    //             <div>
+    //                 <h3>Pounds to KG</h3>
+    //                 <div>
+    //                     <label htmlFor="KG">Kilograms</label>
+    //                     <input value={bool? kilo : Math.round(kilo*0.45)} id="KG" type='number' onChange={changingKilo} disabled={bool===false}/>
+    //                 </div>
+    //                 <div>
+    //                     <label htmlFor="Pound">Pound</label>
+    //                     <input value={bool ? Math.round(kilo*0.45) : kilo} id="Pound" type='number'  onChange={changingKilo} disabled={bool===true}/>
+    //                 </div>
+    //             <h4>you want to convert {kilo}</h4>
+    //             <button onClick={reset}>reset</button>
+    //             <button onClick={flip}>flip</button>
+    //             </div>)
+    // }
+    const root = document.querySelector("#root");
+    function Btn({text,big}){
+        return (<button 
+        style={{
+            backgroundColor:"cornflowerblue",
+            padding:'10px',
+            border:'none',
+            cursor:'pointer',
+            color:'white',
+            fontSize:big ? 18 : 14,
+            fontWeight:'bold',
+            margin:'10px',
+            borderRadius:'15px'
+        }}>{text}</button>);
+    }
+    function ConfirmBtn(){
+        return (<button>confirm</button>);
+    }
+    function App(){
+        return (            
+            <div>
+                <h3>hi!</h3>
+                <Btn text='Save Changes' big='true'/>
+                <Btn text='Continue'/>
+            </div>
+            );
+        
+    }
+    ReactDOM.render(<App/>,root);
+</script>
+</html>
