@@ -4,5 +4,5 @@ function coworker(){
 console.log(coworker());
 
 function ccc(a,b){
-    return a(a*b)+b;
+    return a*(a*b)+b;
 }
